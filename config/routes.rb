@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :achievements
+
   get 'login/login'
   post 'login/login'
 
