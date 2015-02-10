@@ -6,12 +6,9 @@
     <tr><td>
       <% student = Student.find_by_id(session[:student_id]) %>
       <%= student.name %></td></tr>
-    </aside>
-    <article>
     <tr>
-        <%= display_grades(Grade.get_assignments_for_student_email( student.student_email )) %>
+      <td><%= link_to 'Achievements', achievements_path %></td>
     </tr>
-  </article>
   </tbody>
 </table>
 </section>

@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
-
   resources :achievements
+  resources :students do
+    member do
+      get 'edit_achievements'
+      post 'edit_achievements'
+      post 'update_achievements'
+    end
+    collection do
+      get 'dashboard'
+    end
+  end
+
 
   get 'login/login'
   post 'login/login'
