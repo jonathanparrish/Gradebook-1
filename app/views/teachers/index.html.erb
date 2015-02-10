@@ -2,21 +2,11 @@
 
 
 <table>
-  <tbody>
-    <% Student.get_all_children_for_teacher_id( session[:teacher_id] ).each do |student| %>
-      <tr><td><%=  student.name  %></td></tr>
-      <tr>
-        <% @achievement.each do |a| %>
-          <li>
-            <%= check_box_tag "achievements[#{a.id}]", true, @achievement.include?(a) %>
-            <%= a.name %>
-            <%= a.value %>
-          </li>
-        <% end %>
-        <%= submit_tag "Save Tags" %>
-      </tr>
-    <% end %>
-  </tbody>
+ <tbody>
+     <% Student.get_all_children_for_teacher_id( session[:teacher_id] ).each do |student| %>
+       <%= render partial: 'achievements', locals:{student: student} %>
+      <% end %>
+ </tbody>
 </table>
 
 <%= link_to 'Create new teacher', new_teacher_path %><br>

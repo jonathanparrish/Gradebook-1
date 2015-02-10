@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   before_action :check_logged_in
+  before_action :set_student, only:[:edit_achievements, :update_achievements]
 
   def index
     @student = Student.all
@@ -20,9 +21,9 @@ class StudentsController < ApplicationController
   def update_achievements
   @student.achievements = []
   params[:achievements].keys.each do |achievements_id|
-    @student.achievement << Achievement.find_by_id(achievement_id)
+    @student.achievements << Achievement.find_by_id(achievements_id)
   end
-  redirect_to edit_achievements_students_path
+  redirect_to teachers_path
 end
 
   def create
@@ -49,6 +50,10 @@ end
   def check_logged_in
     redirect_to login_login_path unless session[:student_id] || session[:teacher_id]
   end
+
+  def set_student
+        @student = Student.find(params[:id])
+      end
 
   private
   def student_params

@@ -7,7 +7,12 @@
       <% student = Student.find_by_id(session[:student_id]) %>
       <%= student.name %></td></tr>
     <tr>
-      <td><%= link_to 'Achievements', achievements_path %></td>
+      <% student.achievements.each do |achievement| %>
+        <tr>
+          <td><%= achievement.name %></td>
+          <td><%= achievement.value %></td>
+        </tr>
+      <% end %>
     </tr>
   </tbody>
 </table>

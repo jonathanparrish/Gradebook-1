@@ -7,9 +7,12 @@
       <% parent = Parent.find_by_id(session[:parent_id]) %>
       <%= parent.child_name %></td></tr>
       <% student = Student.find_by(name: parent.child_name ) %>
-      <% if student %>
-        <% grade = Grade.get_assignments_for_student_email( student.student_email ) %>
-        <%= display_grades(grade) %>
+      <% student.achievements.each do |achievement| %>
+        <tr>
+          <td><%= achievement.name %></td>
+          <td><%= achievement.value %></td>
+          
+        </tr>
       <% end %>
     </tr>
   </tbody>
