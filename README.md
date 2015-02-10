@@ -1,7 +1,9 @@
 # Gradebook
 
-This app allows multiple teachers to track their student's grades by assignment. The app also allows both students and parents to log into the system to check the student's grades.
+## Gradebook with Achievements
+* Teacher can assign completion of achievement
+* Parent can view their child's achievements completed
+* Student can view their achievements completed
 
-If you would like to access the samples we have included in the app, you can reference the seed.rb which will provide a list of sample users. Depending on the user's authorization rights, they will be limited in what information they can access.
-
-To access this awesomeness, visit our app at: http://tiy-gradebook.herokuapp.com.
+## Flow Chart
+* https://www.lucidchart.com/invitations/accept/58001c96-25bb-4e8c-b649-4c276b4ea43b
